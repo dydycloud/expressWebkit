@@ -1,5 +1,5 @@
 'use strict';
-var app, bodyParser, express, http, invoices, methodOverride, morgan, options, path, routes;
+var app, bodyParser, express, http, methodOverride, morgan, newPage, options, path, routes;
 
 http = require("http");
 
@@ -17,7 +17,7 @@ methodOverride = require('method-override');
 
 routes = require(path.join(process.cwd(), "app/js/routes", "index.js"));
 
-invoices = require("app/js/routes/invoices.js");
+newPage = require("app/js/routes/newPage.js");
 
 app = express();
 
@@ -47,7 +47,7 @@ app.use(express["static"](path.join(process.cwd(), "/public")));
 
 app.get("/", routes.index);
 
-app.get("/invoices", invoices.index);
+app.get("/newPage", newPage.index);
 
 http.createServer(app).listen(app.get("port"), function(err) {
   console.log("server created");
