@@ -8,7 +8,7 @@ morgan         	= require('morgan')
 bodyParser     	= require('body-parser')
 methodOverride 	= require('method-override')
 routes 			= require(path.join(process.cwd(), "app/js/routes", "index.js"))
-invoices 		= require("app/js/routes/newPage.js")
+newPage 		= require("app/js/routes/newPage.js")
 app 			= express()
 options =
   host: "localhost"

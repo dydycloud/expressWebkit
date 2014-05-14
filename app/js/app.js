@@ -1,4 +1,8 @@
 'use strict';
+
+/*
+ * modules
+ */
 var app, bodyParser, express, http, methodOverride, morgan, newPage, options, path, routes;
 
 http = require("http");
@@ -26,6 +30,11 @@ options = {
   port: 2323
 };
 
+
+/*
+ * config
+ */
+
 app.set("port", process.env.PORT || 2323);
 
 app.set("views", process.cwd() + "/app/views");
@@ -45,9 +54,19 @@ app.use(require("stylus").middleware(path.join(process.cwd(), "/public")));
 
 app.use(express["static"](path.join(process.cwd(), "/public")));
 
+
+/*
+ * routes
+ */
+
 app.get("/", routes.index);
 
 app.get("/newPage", newPage.index);
+
+
+/*
+ * launching the server
+ */
 
 http.createServer(app).listen(app.get("port"), function(err) {
   console.log("server created");

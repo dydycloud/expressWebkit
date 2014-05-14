@@ -1,5 +1,7 @@
 'use strict'
-
+###
+# modules
+###
 http 			= require("http")
 express			= require("express")
 http 			= require("http")
@@ -14,8 +16,9 @@ options =
   host: "localhost"
   port: 2323
 
-
-# all environments
+###
+# config
+###
 app.set "port", process.env.PORT or 2323
 app.set "views", process.cwd() + "/app/views"
 app.set "view engine", "jade"
@@ -25,10 +28,15 @@ app.use methodOverride()
 app.use require("stylus").middleware(path.join(process.cwd(), "/public"))
 app.use express.static(path.join(process.cwd(), "/public"))
 
-
+###
+# routes
+###
 app.get "/", routes.index
 app.get "/newPage", newPage.index
 
+###
+# launching the server
+###
 http.createServer(app).listen app.get("port"), (err) ->
   console.log "server created"
   window.location = "http://localhost:" + app.get("port")  if window.location.href.indexOf("localhost") < 0
