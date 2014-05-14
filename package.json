@@ -1,0 +1,19 @@
+{
+  "name": "nw-base",
+  "main": "app/index.html",
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-coffee": "^1.4.3",
+    "gulp-plumber": "^0.6.1",
+    "gulp-util": "^2.2.14"
+  },
+  "dependencies": {
+    "body-parser": "^1.2.0",
+    "express": "*",
+    "jade": "*",
+    "method-override": "^1.0.0",
+    "morgan": "^1.0.1",
+    "serve-favicon": "^2.0.0",
+    "stylus": "*"
+  }
+}
