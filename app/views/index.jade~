@@ -1,6 +1,0 @@
-extends layout
-
-block content
-  h1= pageTitle
-  hr
-  a(href="/invoices") Invoices
